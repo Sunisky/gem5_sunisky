@@ -469,6 +469,7 @@ def run(options, root, testsys, cpu_class):
             if options.fast_forward:
                 testsys.cpu[i].max_insts_any_thread = int(options.fast_forward)
             switch_cpus[i].system = testsys
+            switch_cpus[i].decoder = testsys.cpu[i].decoder // FIXED by chunhao.li
             switch_cpus[i].workload = testsys.cpu[i].workload
             switch_cpus[i].clk_domain = testsys.cpu[i].clk_domain
             switch_cpus[i].progress_interval = \
