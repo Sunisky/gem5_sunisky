@@ -96,8 +96,9 @@ def install_style_hooks(env):
             print("Error updating git %s hook" % hook_name)
             raise
 
-    if hook_exists("pre-commit") and hook_exists("commit-msg"):
-        return
+    # do not use hook to permit comment style
+    # if hook_exists("pre-commit") and hook_exists("commit-msg"):
+    #     return
 
     print(git_style_message, end=' ')
     if SCons.Script.GetOption('install_hooks'):
